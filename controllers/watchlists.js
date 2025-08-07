@@ -62,4 +62,16 @@ router.delete('/:watchlistId', async (req, res) => {
   }
 });
 
+router.get('/:watchlistId/edit', async (req, res) => {
+  try {
+    const currentWatchlist = await Watchlist.findById(req.params.watchlistId);
+    res.render('watchlists/edit.ejs', {
+      watchlist: currentWatchlist,
+    });
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
 module.exports = router;
