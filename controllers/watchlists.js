@@ -74,4 +74,19 @@ router.get('/:watchlistId/edit', async (req, res) => {
   }
 });
 
+router.put('/:watchlistId', async (req, res) => {
+  try {
+    const currentWatchlist = await Watchlist.findById(req.params.watchlistId);
+    if (currentWatchlist.owner.equals(req.session.user._id)) {
+      await currentWatchlist.updateOne(req.body);
+      res.redirect('/watchlists');
+    } else {
+      console.log('Permission denied');
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
 module.exports = router;
