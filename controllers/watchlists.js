@@ -17,4 +17,10 @@ router.get('/new', (req, res) => {
   });
 });
 
+router.post('/', async (req, res) => {
+  req.body.owner = req.session.user._id;
+  await Watchlist.create(req.body);
+  res.redirect('/watchlists')
+});
+
 module.exports = router;

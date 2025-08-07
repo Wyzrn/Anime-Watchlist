@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', authController);
-app.use('/watchlists', watchlistController);
+app.use('/watchlists', isSignedIn, watchlistController);
 
 app.listen(port, () => {
   console.log(`The express app is ready on port ${port}!`);
