@@ -46,4 +46,20 @@ router.get('/:watchlistId', async (req, res) => {
   }
 });
 
+router.delete('/:watchlistId', async (req, res) => {
+  try {
+    const watchlist = await Watchlist.findById(req.params.watchlistId);
+    
+    if (watchlist.owner.equals(req.session.user._id)) {
+      await watchlist.deleteOne();
+      res.redirect('/watchlists');
+    } else {
+      res.send("You don't have permission to do that.");
+    }
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
 module.exports = router;
