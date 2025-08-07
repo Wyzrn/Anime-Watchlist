@@ -11,4 +11,10 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/new', (req, res) => {
+  res.render('watchlists/new.ejs', {
+    user: req.session.user,
+  });
+});
+
 module.exports = router;

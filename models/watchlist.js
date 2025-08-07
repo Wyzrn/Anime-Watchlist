@@ -7,11 +7,11 @@ const watchlistSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: true,
+    required: false,
   },
   rating: {
     type: Number,
-    required: true,
+    required: false,
     min: 0,
   },
   episodeCount: {
@@ -19,9 +19,13 @@ const watchlistSchema = new mongoose.Schema({
     required: true,
     min: 0,
   },
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
+  image: {
+    type: String,
+    required: false,
+  },
+  status: {
+    type: String,
+    required: true,
   },
 });
 
