@@ -10,6 +10,7 @@ const authController = require('./controllers/auth.js');
 const watchlistController = require('./controllers/watchlists.js');
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
+const path = require('path');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 

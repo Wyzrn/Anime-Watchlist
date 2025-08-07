@@ -1,5 +1,7 @@
 <!-- views/listings/index.ejs -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<link rel="stylesheet" href="/stylesheets/style.css" />
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,16 +10,20 @@
     <title>Watchlist</title>
   </head>
   <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>Here's your Watchlist</h1>
-    <a href="/watchlists/new">Add a New Watchlist</a>
-    <ul>
-      <% watchlists.forEach((watchlist) => { %>
-      <li>
-       A watchlist of <%= watchlist.title %> made by <%= watchlist.owner.username %>.
-       <a href="/watchlists/<%= watchlist._id %>">View more details.</a>
-      </li>
-      <% }) %>
-    </ul>
-  </body>
+<div class ="index-body">
+  <%- include('../partials/_navbar.ejs') %>
+  <div class="index-header">
+    <h1>All Watchlists</h1>
+    <a href="/watchlists/new">+ Add Watchlist</a>
+  </div>
+  <div class="card-container">
+    <% watchlists.forEach((watchlist)=> { %>
+    <a href="/watchlists/<%= watchlist._id %>">
+      <h4><%= watchlist.title %> Watchlist</h4>
+      <p>Created by <%= watchlist.owner.username %></p>
+    </a>
+    <% }) %>
+  </div>
+</div>
+</body>
 </html>

@@ -1,3 +1,6 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" href="/stylesheets/style.css" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,25 +11,28 @@
 <body>
     <!-- Include the navbar partial -->
     <%- include('../partials/_navbar.ejs') %>
-
+<div class="new-container">
+    <div class="new-form-container">
     <!-- Heading -->
     <h1>Add a New Watchlist!</h1>
 
     <!-- Form with submit button -->
-    <form action="/watchlists" method="POST">
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" required />
-        <label for="description">Description:</label>
-        <input type="text" name="description" id="description" required/>
-        <label for="rating">Rating:</label>
-        <input type="number" name="rating" id="rating" required/>
-        <label for="episodeCount">Episode Count:</label>
-        <input type="number" name="episodeCount" id="episodeCount" required />
-        <label for="image">Image:</label>
-        <input type="text" name="image" id="image" />
-        <label for="status">Status:</label>
-        <input type="text" name="status" id="status" required />
-        <button type="submit">Submit</button>
-    </form>
+        <form action="/watchlists" method="POST">
+             <label for="title">Title:</label>
+            <input type="text" name="title" id="title" required />
+            <label for="description">Description:</label>
+            <input type="text" name="description" id="description" required/>
+            <label for="rating">Rating:</label>
+            <input type="number" name="rating" id="rating" required/>
+            <label for="episodeCount">Episode Count:</label>
+            <input type="number" name="episodeCount" id="episodeCount" required />
+            <label for="image">Image:</label>
+            <input type="text" name="image" id="image" />
+            <label for="status">Status:</label>
+            <input type="text" name="status" id="status" required />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div> 
 </body>
 </html>
