@@ -10,12 +10,12 @@ Inspired by the need to keep track of an ever-growing list of anime to watch, th
 
 ## Getting Started
 
-Deployed App: [Link to your deployed app](https://your-anime-watchlist-3986aaf2e0c5.herokuapp.com/)
+Deployed App: [Your Anime Watchlist](https://your-anime-watchlist-3986aaf2e0c5.herokuapp.com/)
 
 
 
-Planning Materials: [Trello Board for Project Planning](https://trello.com/b/p49ViPLz)
-The Trello board outlines the development process, including task breakdowns and milestones for building the anime watchlist.
+Planning Materials: The [Trello Board](https://trello.com/b/p49ViPLz)
+ outlines the development process, including task breakdowns and milestones for building the anime watchlist.
 
 ## Attributions
 
